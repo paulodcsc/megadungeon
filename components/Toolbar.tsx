@@ -60,6 +60,15 @@ export function Toolbar() {
         >
           Clear
         </button>
+        <button
+          onClick={async () => {
+            await fetch("/api/logout", { method: "POST" });
+            window.location.href = "/login";
+          }}
+          className="px-3 py-1.5 rounded text-sm bg-zinc-900 border border-zinc-800 text-zinc-400 hover:bg-zinc-800"
+        >
+          Logout
+        </button>
       </div>
     </div>
   );
